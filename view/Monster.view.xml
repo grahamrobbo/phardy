@@ -1,0 +1,54 @@
+<mvc:View height="100%" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+    <Page title="Search for Monsters" class="marginBoxContent">
+        <headerContent>
+            <Button icon="sap-icon://action" />
+        </headerContent>
+        <subHeader>
+            <Toolbar>
+                <SearchField />
+            </Toolbar>
+        </subHeader>
+        <content>
+            <Table id="idProductsTable" inset="false" items="{path: '/Monsters',sorter: {path: 'MonsterName'}}">
+                <headerToolbar>
+                    <Toolbar>
+                        <Label text="Monsters"></Label>
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="Monster Number" />
+                    </Column>
+                    <Column>
+                        <Text text="Item" />
+                    </Column>
+                    <Column>
+                        <Text text="Sanity" />
+                    </Column>
+                    <Column>
+                        <Text text="Colour" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <ObjectIdentifier title="{Name}" text="{ProductId}" class="sapMTableContentMargin" />
+                            <Text text="{SupplierName}" />
+                            <Text text="{Width} x {Depth} x {Height} {DimUnit}" />
+                            <ObjectNumber number="{Price}" unit="{CurrencyCode}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button text="Accept" type="Accept" />
+                <Button text="Reject" type="Reject" />
+                <Button text="Edit" />
+                <Button text="Delete" />
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>
