@@ -1,0 +1,24 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+    <Dialog title="Monster Details" contentWidth="60%">
+        <content>
+            <f:SimpleForm minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+                <f:content>
+                    <Label text="Name" />
+                    <Text text="{ProductName} ({ProductID})" />
+                    <Label text="Supplier" />
+                    <Text text="{Supplier/CompanyName}" />
+                    <Label text="Quantity per Unit" />
+                    <Text text="{QuantityPerUnit}" />
+                    <Label text="Unit Price" />
+                    <Text text="{UnitPrice}" />
+                    <Label text="Units in Stock" />
+                    <Text text="{UnitsInStock}" />
+                </f:content>
+            </f:SimpleForm>
+        </content>
+        <buttons>
+            <Button text="Delete" type="Reject" icon="sap-icon://delete" press="onMosterDelete" />
+            <Button text="Cancel" press="onMosterDetailDialogCancel" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

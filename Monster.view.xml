@@ -1,41 +1,37 @@
 <mvc:View height="100%" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
     <Page title="Search for Monsters" class="marginBoxContent">
         <headerContent>
-            <Button icon="sap-icon://action" />
+<!--             <Button icon="sap-icon://action" /> -->
         </headerContent>
         <subHeader>
             <Toolbar>
-                <SearchField />
+                <SearchField width="200px" liveChange="onSearch" />
             </Toolbar>
         </subHeader>
         <content>
-            <Table id="idProductsTable" inset="false" items="{path: '/Monsters',sorter: {path: 'MonsterName'}}">
+            <Table id="idProductsTable" inset="false" items="{path: '/Products',sorter: {path: 'ProductName'}}">
                 <headerToolbar>
                     <Toolbar>
-                        <Label text="Monsters"></Label>
+                        <Label text="Products"></Label>
                     </Toolbar>
                 </headerToolbar>
                 <columns>
                     <Column>
-                        <Text text="Monster Number" />
+                        <Text text="Product" />
                     </Column>
                     <Column>
-                        <Text text="Item" />
+                        <Text text="Quantity per Unit" />
                     </Column>
                     <Column>
-                        <Text text="Sanity" />
-                    </Column>
-                    <Column>
-                        <Text text="Colour" />
+                        <Text text="Units in Stock" />
                     </Column>
                 </columns>
                 <items>
-                    <ColumnListItem>
+                    <ColumnListItem type="Navigation" press="onMonsterSelected">
                         <cells>
-                            <ObjectIdentifier title="{Name}" text="{ProductId}" class="sapMTableContentMargin" />
-                            <Text text="{SupplierName}" />
-                            <Text text="{Width} x {Depth} x {Height} {DimUnit}" />
-                            <ObjectNumber number="{Price}" unit="{CurrencyCode}" />
+                            <ObjectIdentifier title="{ProductName}" text="Product Id {ProductID}" class="sapMTableContentMargin" />
+                            <Text text="{QuantityPerUnit}" />
+                            <Text text="{UnitsInStock}" />
                         </cells>
                     </ColumnListItem>
                 </items>
@@ -44,10 +40,10 @@
         <footer>
             <Toolbar>
                 <ToolbarSpacer/>
-                <Button text="Accept" type="Accept" />
+<!--                 <Button text="Accept" type="Accept" />
                 <Button text="Reject" type="Reject" />
                 <Button text="Edit" />
-                <Button text="Delete" />
+                <Button text="Delete" /> -->
             </Toolbar>
         </footer>
     </Page>
