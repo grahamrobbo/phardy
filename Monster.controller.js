@@ -68,6 +68,11 @@ sap.ui.core.mvc.Controller.extend("monster.demo.Monster", {
         } else {
             sap.m.MessageBox.alert('An Unknown Error Detected');
         }
+    },
+
+    myFormatter: function(value) {
+        console.log('myFormatter');
+        return value+' each';
     }
 
 });

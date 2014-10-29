@@ -30,8 +30,8 @@
                     <ColumnListItem type="Navigation" press="onMonsterSelected">
                         <cells>
                             <ObjectIdentifier title="{ProductName}" text="Product Id {ProductID}" class="sapMTableContentMargin" />
-                            <Text text="{QuantityPerUnit}" />
-                            <Text text="{UnitsInStock}" />
+                            <Text text="QuantityPerUnit" />
+                            <Text text="{path:'UnitsInStock',formatter:'.myFormatter'}" />
                         </cells>
                     </ColumnListItem>
                 </items>
