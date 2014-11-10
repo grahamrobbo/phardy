@@ -1,0 +1,51 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="monster.myView" xmlns:html="http://www.w3.org/1999/xhtml">
+    <Page title="Search for Monsters" class="marginBoxContent">
+        <headerContent>
+<!--             <Button icon="sap-icon://action" /> -->
+        </headerContent>
+        <subHeader>
+            <Toolbar>
+                <SearchField width="200px" liveChange="onSearch" />
+            </Toolbar>
+        </subHeader>
+        <content>
+            <Table id="idProductsTable" inset="false" items="{path: '/Products',sorter: {path: 'ProductName'}}">
+                <headerToolbar>
+                    <Toolbar>
+                        <Label text="Products"></Label>
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column>
+                        <Text text="Product" />
+                    </Column>
+                    <Column>
+                        <Text text="Quantity per Unit" />
+                    </Column>
+                    <Column>
+                        <Text text="Units in Stock" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Navigation" press="onMonsterSelected">
+                        <cells>
+                            <ObjectIdentifier title="{ProductName}" text="Product Id {ProductID}" class="sapMTableContentMargin" />
+                            <Text text="{QuantityPerUnit}" />
+                            <Text text="{UnitsInStock}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+<!--                 <Button text="Accept" type="Accept" />
+                <Button text="Reject" type="Reject" />
+                <Button text="Edit" />
+                <Button text="Delete" /> -->
+            </Toolbar>
+        </footer>
+    </Page>
+</core:View>
