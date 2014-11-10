@@ -23,7 +23,7 @@ sap.ui.core.mvc.Controller.extend("monster.MonsterDetail", {
             my: 'center center',
             at: 'center center'
         });
-        this.onCancel();
+        app.back();
     },
 
     _monsterDeleteError: function(oEvent) {
