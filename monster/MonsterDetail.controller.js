@@ -2,8 +2,6 @@ jQuery.sap.require("sap.m.MessageBox");
 jQuery.sap.require("sap.m.MessageToast");
 sap.ui.core.mvc.Controller.extend("monster.MonsterDetail", {
 
-    onInit: function() {},
-
     onNavButtonPress: function(oEvent) {
         app.back();
     },
@@ -35,6 +33,6 @@ sap.ui.core.mvc.Controller.extend("monster.MonsterDetail", {
         } else {
             sap.m.MessageBox.alert('An Unknown Error Detected');
         }
-    },
+    }
 
 });
